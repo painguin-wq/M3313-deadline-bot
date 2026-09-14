@@ -1,25 +1,35 @@
-# Deadline reminder bot for M3104 group @ ITMO University
+# Deadline reminder bot for M3313 — dead inside M3313
 
-This bot is made for Telegram and is used to fetch deadlines and upcoming tests from a specific URL and send them to a specified Telegram groupchat as a reminder. The time remaining is also displayed and updated every minute. After 1 day, the message is deleted as it is expected that the new message is sent.
+Telegram bot [`@m3313_deadinside_bot`](https://t.me/m3313_deadinside_bot) for the M3313 group. It keeps a live deadline board in the chat and accepts commands to add or remove items.
 
-# Before first run
-Before running this script, please ensure the following links and bot data is relevant for you and modify it at the top of the `main.py` file if needed:
+Each deadline is shown with **time**, **place**, **teacher**, **skills**, **link**, and a **short description**.
 
-```python
-# Modify the links and data below:
-DEADLINES_URL = "https://m3104.nawinds.dev/api-deadlines"  # URL of the json file with deadlines (see file description below)
-ADD_DEADLINE_LINK = "https://m3104.nawinds.dev/deadlines-editing-instructions/"  # URL of the webpage for adding a new deadline to the file (usually GitHub file editing page)
-BOT_NAME = "Дединсайдер M3104"
-BOT_USERNAME = "m3104_deadliner_bot"  # username of the bot as it appears in Telegram
+# Commands (in the group chat)
+
+```
+/add Название | 16.09.2026 15:30 | ауд. 2414 | Папикян С.С. | frontend | https://… | коротко что сдавать
+/edit UML: ЛР 1 | time=15.09.2026 18:50 | place=ауд. 2335
+/delete Web: ЛР 1
+/list
+/all
+/help
 ```
 
-Also add the following environment variables:
+`/list` shows the next 5 labs. `/all` shows every remaining lab. Fields after the name in `/add` are optional except the date. Default time is `23:59` MSK. The bot must be a member of the group; commands work even with group privacy mode on.
 
-```python
-# Environment variables that should be available:
-TOKEN = os.getenv("TOKEN")  # Bot token from t.me/botfather
-MAIN_GROUP_ID = int(os.getenv("MAIN_GROUP_ID"))  # ID of the group the bot is expected to send deadlines to
-```
+# Secrets
+
+`TOKEN` and `MAIN_GROUP_ID` come from environment / GitHub Actions secrets. Optional: `EDIT_MESSAGE_ID` (keep editing one board message), `ADMIN_USER_IDS` (comma-separated Telegram user ids; if empty, anyone in the group can `/add` and `/delete`), `ADD_CALENDAR_LINK`, `DEADLINES_PATH`.
+
+# Deadlines file
+
+[`DEADLINES.json`](DEADLINES.json) is the source of truth and is updated when someone uses `/add`, `/edit`, or `/delete`. Mount it as a volume so chat edits survive container rebuilds.
 
 # How to run
-This is a very simple script that can be run as a cron job. Just configure the crontab to start `main.py` every day at a specific time and it will fetch the deadlines and send them to the specified groupchat.
+
+```bash
+cp .env.sample .env
+docker compose up --build
+```
+
+On push to `main`, GitHub Actions writes `.env` from `TOKEN` and `MAIN_GROUP_ID` and deploys.
