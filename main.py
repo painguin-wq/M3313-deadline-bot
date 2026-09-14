@@ -41,10 +41,11 @@ CMD_RE = re.compile(r'^/([A-Za-z]+)(?:@[\w_]+)?(?:\s+(.*))?$', re.DOTALL)
 MOSCOW = dt.timezone(dt.timedelta(hours=3))
 SKILL_ALIASES = {
     'web': 'frontend', 'frontend': 'frontend', 'html': 'frontend', 'css': 'frontend',
-    'uml': 'uml', 'сети': 'networks', 'networks': 'networks', 'net': 'networks',
+    'uml': 'uml', 'сети': 'telecom', 'networks': 'telecom', 'net': 'telecom',
+    'телеком': 'telecom', 'telecom': 'telecom',
     'dwh': 'dwh', 'хранилища': 'dwh', 'warehouse': 'dwh',
     'бд': 'databases', 'db': 'databases', 'databases': 'databases',
-    'ml': 'ml', 'телеком': 'telecom', 'telecom': 'telecom',
+    'ml': 'ml',
     'backend': 'backend', 'math': 'math', 'algorithms': 'algorithms',
 }
 HELP_TEXT = (
