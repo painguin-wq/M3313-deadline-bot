@@ -288,7 +288,6 @@ def save_deadlines_payload(payload: dict) -> None:
 
 
 TWO_WEEKS = dt.timedelta(days=14)
-ONE_WEEK = dt.timedelta(days=7)
 LIST_LIMIT = 5
 EDIT_FIELD_ALIASES = {
     'name': 'name', 'название': 'name',
@@ -315,39 +314,22 @@ def remaining(item: dict) -> dt.timedelta:
     return due_dt(item) - now_msk()
 
 
-def item_kind(item: dict) -> str:
-    name = display_name(item).lower()
-    if "коллоквиум" in name or "колок" in name:
-        return "colloquium"
-    return "lab"
-
-
 def warning_for(item: dict) -> tuple[str, int] | None:
     due = due_dt(item)
-    left = due - now_msk()
-    if left.total_seconds() < 0:
+    if (due - now_msk()).total_seconds() < 0:
         return None
     today = now_msk().date()
     due_day = due.date()
+    days_left = (due_day - today).days
     name = display_name(item)
-    if item_kind(item) == "colloquium":
-        if due_day == today:
-            return (f"Сегодня ({due.strftime('%d.%m')}) сдача коллоквиума {name}", 0)
-        if due_day == today + dt.timedelta(days=1):
-            return (f"Завтра ({due.strftime('%d.%m')}) сдача коллоквиума {name}", 1)
-        if left < ONE_WEEK:
-            return (f"Срочно готовить коллоквиум {name}", 2)
-        if left <= TWO_WEEKS:
-            return (f"Пора начинать коллоквиум {name}", 3)
-        return None
-    if due_day == today:
-        return (f"Сегодня ({due.strftime('%d.%m')}) сдача лабы {name}", 0)
-    if due_day == today + dt.timedelta(days=1):
-        return (f"Завтра ({due.strftime('%d.%m')}) сдача лабы {name}", 1)
-    if left < ONE_WEEK:
-        return (f"Срочно делать лабу {name}", 2)
-    if left <= TWO_WEEKS:
-        return (f"Пора начинать лабу {name}", 3)
+    if days_left == 0:
+        return (f"Сегодня ({due.strftime('%d.%m')}) сдача {name}", 0)
+    if days_left == 1:
+        return (f"Завтра ({due.strftime('%d.%m')}) сдача {name}", 1)
+    if days_left < 7:
+        return (f"Срочно {name}", 2)
+    if days_left == 7:
+        return (f"Пора начинать {name}", 3)
     return None
 
 
