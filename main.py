@@ -306,6 +306,7 @@ EDIT_FIELD_ALIASES = {
     'teacher': 'teacher', 'препод': 'teacher', 'преподаватель': 'teacher',
     'skills': 'skills', 'skill': 'skills',
     'url': 'url', 'link': 'url',
+    'submit_url': 'submit_url', 'форма': 'submit_url',
     'description': 'description', 'desc': 'description', 'описание': 'description',
     'type': 'type',
 }
@@ -332,9 +333,9 @@ def warning_for(item: dict) -> tuple[str, int] | None:
     due_day = due.date()
     name = display_name(item)
     if due_day == today:
-        return (f"Сегодня сдача лабы {name}", 0)
+        return (f"Сегодня ({due.strftime('%d.%m')}) сдача лабы {name}", 0)
     if due_day == today + dt.timedelta(days=1):
-        return (f"Завтра сдача лабы {name}", 1)
+        return (f"Завтра ({due.strftime('%d.%m')}) сдача лабы {name}", 1)
     if left < ONE_WEEK:
         return (f"Срочно делать лабу {name}", 2)
     if left <= TWO_WEEKS:
@@ -371,10 +372,11 @@ def format_item_block(item: dict, index: int, *, warnings: bool = True) -> str:
         details.append(escape(item['teacher']))
     if details:
         lines.append(" · ".join(details))
+    submit_url = item.get('submit_url')
+    if submit_url:
+        lines.append(f"<a href='{escape(submit_url)}'>форма отчёта</a>")
     description = (item.get('description') or "").strip()
     if description:
-        if len(description) > 140:
-            description = description[:137] + "…"
         lines.append(f"<i>{escape(description)}</i>")
     return "\n".join(lines) + "\n\n"
 
@@ -432,6 +434,10 @@ def labs_upcoming(limit: int | None = None) -> list[dict]:
     return items
 
 
+def updated_stamp() -> str:
+    return now_msk().strftime("%d.%m в %H:%M")
+
+
 def get_message_parts(*, all_labs: bool = False, warnings: bool = True, limit: int | None = None) -> list[str]:
     if all_labs:
         items = upcoming_sorted()
@@ -440,8 +446,9 @@ def get_message_parts(*, all_labs: bool = False, warnings: bool = True, limit: i
     else:
         items = labs_in_two_weeks()
     if not items:
-        return ["нет сдач."]
-    return chunk_text(add_items("", items, warnings=warnings))
+        return [f"нет сдач.\n\nобновлено {updated_stamp()}"]
+    stamp = f"обновлено {updated_stamp()}"
+    return [part.rstrip() + "\n\n" + stamp for part in chunk_text(add_items("", items, warnings=warnings))]
 
 
 def get_message_text() -> str:

@@ -91,6 +91,7 @@
       "teacher": "Кравченко Д.А.",
       "skills": ["uml"],
       "url": "https://uml.itmo.is/labs/lab-1/",
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "5 баллов. Сдача 15.09. Перерисовать 5 диаграмм в одном проекте Visual Paradigm Community Edition, без водяных знаков. Отчёт: ФИО, группа, экспорт диаграмм (не скрины редактора).",
       "type": ""
     },
@@ -101,6 +102,7 @@
       "teacher": "Кравченко Д.А.",
       "skills": ["uml"],
       "url": "https://uml.itmo.is/labs/lab-2/",
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "8 баллов. Тема на семестр уникальна в группе. Граница, стейкхолдеры, ≥5 ФТ, ≥2 НФТ, ≥2 ограничения, таблица цель—возможность—требование. Выдача 29.09.",
       "type": ""
     },
@@ -111,6 +113,7 @@
       "teacher": "Кравченко Д.А.",
       "skills": ["uml"],
       "url": "https://uml.itmo.is/labs/lab-3/",
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "7 баллов. Общая + детализированная use case и краткая спецификация. С ЛР 3 всё в одном проекте VP. Выдача 13.10.",
       "type": ""
     },
@@ -121,6 +124,7 @@
       "teacher": "Кравченко Д.А.",
       "skills": ["uml"],
       "url": "https://uml.itmo.is/labs/lab-4/",
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "8 баллов. Сценарий с альтернативами и одна activity-диаграмма. Выдача 27.10.",
       "type": ""
     },
@@ -131,6 +135,7 @@
       "teacher": "Кравченко Д.А.",
       "skills": ["uml"],
       "url": "https://uml.itmo.is/labs/lab-5/",
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "14 баллов. Словарь, концептуальная и техническая модели, ADR, пакеты/слои, компоненты. Выдача 10.11.",
       "type": ""
     },
@@ -141,6 +146,7 @@
       "teacher": "Кравченко Д.А.",
       "skills": ["uml"],
       "url": "https://uml.itmo.is/labs/lab-6/",
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "8 баллов. НФТ, ограничения и deployment. Выдача 24.11. Итого за лабы 60 баллов, отдельной лабы по C4 нет.",
       "type": ""
     },
@@ -151,6 +157,7 @@
       "teacher": "Кравченко Д.А.",
       "skills": ["uml"],
       "url": "https://uml.itmo.is/labs/lab-7/",
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "10 баллов. State machine предметного объекта и sequence сценария. Выдача 08.12. Дата сдачи ориентировочная.",
       "type": ""
     },
