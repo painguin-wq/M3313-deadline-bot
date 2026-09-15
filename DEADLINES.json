@@ -290,6 +290,166 @@
       "url": "",
       "description": "20 баллов. Restore филиала из хранилища за интервал. Экзамен/защита 20 баллов отдельно; вместо экзамена можно модуль миграции.",
       "type": ""
+    },
+    {
+      "name": "ML: Коллоквиум supervised",
+      "time": "23 Sep 2026 13:00:00 GMT+3",
+      "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "https://docs.google.com/document/d/19_TwyxkLvVrSAvPsq-7_hndZFYa2tkJxLumCkTDchvI/edit",
+      "description": "10 баллов. Окно без штрафа 3 недели от лекции 08.09 (до 29.09); 07.10 уже с просрочкой. 1 пересдача.",
+      "type": ""
+    },
+    {
+      "name": "ML: Коллоквиум unsupervised",
+      "time": "23 Sep 2026 13:00:00 GMT+3",
+      "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "https://docs.google.com/document/d/1JrqIGzvHxasU1ShijO7I8j49hmRbHt13347Zy5qnPfg/edit",
+      "description": "10 баллов. Окно без штрафа 3 недели от лекции 15.09 (до 06.10); запас 07.10. 1 пересдача.",
+      "type": ""
+    },
+    {
+      "name": "ML: ЛР supervised",
+      "time": "23 Sep 2026 23:59:00 GMT+3",
+      "place": "GitHub Classroom; на практике 2244 могут спросить код",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "",
+      "description": "10 баллов, обязательная. PR в Classroom, замечания ревью обязательны. Ориентир 23.09, как первый колок. Ссылка на репо будет в задании.",
+      "type": ""
+    },
+    {
+      "name": "ML: ЛР unsupervised",
+      "time": "07 Oct 2026 23:59:00 GMT+3",
+      "place": "GitHub Classroom",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "",
+      "description": "По желанию, в БАРС не идёт. Кластеризация / PCA. Ориентир пара 07.10.",
+      "type": ""
+    },
+    {
+      "name": "ML: Коллоквиум neural networks",
+      "time": "07 Oct 2026 13:00:00 GMT+3",
+      "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
+      "description": "10 баллов. Окно без штрафа до 27.10 (3 недели от лекции 06.10): пары 07.10 и 21.10. 1 пересдача.",
+      "type": ""
+    },
+    {
+      "name": "ML: Коллоквиум text",
+      "time": "21 Oct 2026 13:00:00 GMT+3",
+      "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
+      "description": "10 баллов. Окно без штрафа до 10.11: практика в окне 21.10, 18.11 уже с просрочкой. 1 пересдача.",
+      "type": ""
+    },
+    {
+      "name": "ML: ЛР text",
+      "time": "21 Oct 2026 23:59:00 GMT+3",
+      "place": "GitHub Classroom",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "",
+      "description": "По желанию, в БАРС не идёт. NLP / трансформеры. Ориентир 21.10.",
+      "type": ""
+    },
+    {
+      "name": "ML: ЛР deep learning",
+      "time": "18 Nov 2026 23:59:00 GMT+3",
+      "place": "GitHub Classroom; на практике 2244 могут спросить код",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "",
+      "description": "10 баллов, обязательная. В таблице на неделе 11 (10.11). Ближайшая практика после каникульного разрыва — 18.11.",
+      "type": ""
+    },
+    {
+      "name": "ML: Коллоквиум image",
+      "time": "18 Nov 2026 13:00:00 GMT+3",
+      "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
+      "description": "10 баллов. Окно без штрафа до 01.12: пары 18.11 и запас 02.12. 1 пересдача.",
+      "type": ""
+    },
+    {
+      "name": "ML: Коллоквиум audio",
+      "time": "18 Nov 2026 13:00:00 GMT+3",
+      "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
+      "description": "10 баллов. Окно без штрафа до 08.12: пары 18.11 и 02.12. 1 пересдача.",
+      "type": ""
+    },
+    {
+      "name": "ML: ЛР image",
+      "time": "18 Nov 2026 23:59:00 GMT+3",
+      "place": "GitHub Classroom",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "",
+      "description": "По желанию, в БАРС не идёт. CV. Ориентир 18.11.",
+      "type": ""
+    },
+    {
+      "name": "ML: Коллоквиум generative",
+      "time": "02 Dec 2026 13:00:00 GMT+3",
+      "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
+      "description": "10 баллов. Окно без штрафа до 22.12: пары 02.12 и 16.12. 1 пересдача.",
+      "type": ""
+    },
+    {
+      "name": "ML: ЛР audio",
+      "time": "02 Dec 2026 23:59:00 GMT+3",
+      "place": "GitHub Classroom",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "",
+      "description": "По желанию, в БАРС не идёт. Звук / речь. Ориентир 02.12.",
+      "type": ""
+    },
+    {
+      "name": "ML: Коллоквиум recsys",
+      "time": "16 Dec 2026 13:00:00 GMT+3",
+      "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
+      "description": "10 баллов. Окно без штрафа до 29.12: практика 16.12. 1 пересдача.",
+      "type": ""
+    },
+    {
+      "name": "ML: ЛР generative",
+      "time": "16 Dec 2026 23:59:00 GMT+3",
+      "place": "GitHub Classroom",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "",
+      "description": "По желанию, в БАРС не идёт. Генеративные модели. Ориентир последняя пара 16.12.",
+      "type": ""
+    },
+    {
+      "name": "ML: ЛР recsys",
+      "time": "16 Dec 2026 23:59:00 GMT+3",
+      "place": "GitHub Classroom",
+      "teacher": "Захаров К.С.",
+      "skills": ["ml"],
+      "url": "",
+      "description": "По желанию, в БАРС не идёт. Рекомендации. Ориентир 16.12.",
+      "type": ""
     }
   ]
 }

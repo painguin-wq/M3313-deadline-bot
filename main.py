@@ -315,6 +315,13 @@ def remaining(item: dict) -> dt.timedelta:
     return due_dt(item) - now_msk()
 
 
+def item_kind(item: dict) -> str:
+    name = display_name(item).lower()
+    if "коллоквиум" in name or "колок" in name:
+        return "colloquium"
+    return "lab"
+
+
 def warning_for(item: dict) -> tuple[str, int] | None:
     due = due_dt(item)
     left = due - now_msk()
@@ -323,6 +330,16 @@ def warning_for(item: dict) -> tuple[str, int] | None:
     today = now_msk().date()
     due_day = due.date()
     name = display_name(item)
+    if item_kind(item) == "colloquium":
+        if due_day == today:
+            return (f"Сегодня ({due.strftime('%d.%m')}) сдача коллоквиума {name}", 0)
+        if due_day == today + dt.timedelta(days=1):
+            return (f"Завтра ({due.strftime('%d.%m')}) сдача коллоквиума {name}", 1)
+        if left < ONE_WEEK:
+            return (f"Срочно готовить коллоквиум {name}", 2)
+        if left <= TWO_WEEKS:
+            return (f"Пора начинать коллоквиум {name}", 3)
+        return None
     if due_day == today:
         return (f"Сегодня ({due.strftime('%d.%m')}) сдача лабы {name}", 0)
     if due_day == today + dt.timedelta(days=1):
