@@ -13,6 +13,7 @@ from pathlib import Path
 import requests
 
 DEADLINES_PATH = Path(os.getenv("DEADLINES_PATH") or Path(__file__).with_name("DEADLINES.json"))
+BOARD_PATH = Path(os.getenv("BOARD_PATH") or Path(__file__).parent / "board-data" / "BOARD.json")
 DEADLINES_URL = os.getenv("DEADLINES_URL") or ""
 BOT_NAME = "dead inside M3313"
 BOT_USERNAME = "m3313_deadinside_bot"
@@ -25,7 +26,6 @@ ADD_CALENDAR_LINK = os.getenv("ADD_CALENDAR_LINK") == 'true'
 ADMIN_USER_IDS = {
     int(x) for x in (os.getenv("ADMIN_USER_IDS") or "").replace(" ", "").split(",") if x
 }
-REFRESH_SECONDS = int(os.getenv("REFRESH_SECONDS") or "60")
 
 assert TOKEN, "Missing token!"
 assert MAIN_GROUP_ID, "Missing group ID!"
@@ -53,6 +53,7 @@ HELP_TEXT = (
     "<code>/add Название | ДД.ММ.ГГГГ ЧЧ:ММ | место | препод | skill | url | описание</code>\n"
     "<code>/edit часть названия | time=15.09.2026 18:50 | place=ауд. 2335</code>\n"
     "<code>/delete часть названия</code>\n"
+    "<code>/refresh</code> — переслать доску (старое сообщение удаляется)\n"
     "<code>/list</code> — ближайшие 5 лаб\n"
     "<code>/all</code> — все лабы\n"
     "<code>/help</code>"
@@ -91,16 +92,6 @@ def send_message(text: str, chat_id: int | None = None, reply_to: int | None = N
     if reply_to:
         args['reply_parameters'] = {'message_id': reply_to}
     return telegram_request('sendMessage', args)['result']['message_id']
-
-
-def edit_message(message_id: int, text: str, chat_id: int | None = None) -> int:
-    return telegram_request('editMessageText', {
-        'chat_id': chat_id or MAIN_GROUP_ID,
-        'parse_mode': 'HTML',
-        'message_id': message_id,
-        'text': text,
-        'link_preview_options': {'is_disabled': True},
-    })['result']['message_id']
 
 
 def delete_message(message_id: int, chat_id: int | None = None) -> bool:
@@ -495,44 +486,71 @@ def is_allowed(user_id: int | None) -> bool:
     return user_id in ADMIN_USER_IDS
 
 
+def warning_snapshot() -> str:
+    rows: list[str] = []
+    for item in labs_in_two_weeks():
+        warning = warning_for(item)
+        if warning:
+            rows.append(f"{warning[1]}|{display_name(item)}|{warning[0]}")
+    return "\n".join(rows)
+
+
 class Board:
     def __init__(self):
-        self.message_ids = [EDIT_MESSAGE_ID] if EDIT_MESSAGE_ID else []
-        self.texts: list[str] = []
+        self.message_ids: list[int] = []
+        self.warning_key = ""
+        self._load()
 
-    def publish(self, force: bool = False) -> None:
-        parts = get_message_parts()
-        if not force and parts == self.texts and len(self.message_ids) == len(parts):
+    def _load(self) -> None:
+        if BOARD_PATH.exists():
+            try:
+                data = json.loads(BOARD_PATH.read_text(encoding="utf-8"))
+                self.message_ids = [int(x) for x in (data.get("message_ids") or []) if x]
+                self.warning_key = data.get("warning_key") or ""
+            except (OSError, json.JSONDecodeError, TypeError, ValueError) as e:
+                logging.warning(f"Could not load board state: {e}")
+        if EDIT_MESSAGE_ID and EDIT_MESSAGE_ID not in self.message_ids:
+            self.message_ids.append(EDIT_MESSAGE_ID)
+
+    def _save(self) -> None:
+        BOARD_PATH.parent.mkdir(parents=True, exist_ok=True)
+        BOARD_PATH.write_text(
+            json.dumps(
+                {"message_ids": self.message_ids, "warning_key": self.warning_key},
+                ensure_ascii=False,
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+
+    def clear(self) -> None:
+        for message_id in self.message_ids:
+            try:
+                delete_message(message_id)
+            except TelegramException:
+                pass
+        self.message_ids = []
+
+    def replace(self) -> None:
+        self.clear()
+        for text in get_message_parts():
+            try:
+                self.message_ids.append(send_message(text))
+            except TelegramException as e:
+                logging.error(f"Failed to send board: {e}")
+        self.warning_key = warning_snapshot()
+        self._save()
+        logging.info(f"Board message ids: {self.message_ids}")
+
+    def publish_if_warnings_changed(self) -> None:
+        key = warning_snapshot()
+        if key == self.warning_key:
             return
-        new_ids: list[int] = []
-        try:
-            for i, text in enumerate(parts):
-                existing = self.message_ids[i] if i < len(self.message_ids) else 0
-                if existing:
-                    try:
-                        edit_message(existing, text)
-                        new_ids.append(existing)
-                        continue
-                    except TelegramException as e:
-                        if e.error_code != 400:
-                            logging.error(f"Failed to update board {existing}: {e}")
-                            new_ids.append(existing)
-                            continue
-                        logging.warning(f"Board {existing} missing, sending a new one")
-                new_ids.append(send_message(text))
-            for extra_id in self.message_ids[len(parts):]:
-                try:
-                    delete_message(extra_id)
-                except TelegramException:
-                    pass
-            self.message_ids = new_ids
-            self.texts = parts
-            logging.info(f"Board message ids: {self.message_ids}")
-        except TelegramException as e:
-            logging.error(f"Failed to publish board: {e}")
+        logging.info("Warnings changed, replacing board")
+        self.replace()
 
 
-def cmd_add(body: str, board: Board) -> str:
+def cmd_add(body: str) -> str:
     try:
         item = parse_add_body(body)
     except ValueError:
@@ -542,7 +560,6 @@ def cmd_add(body: str, board: Board) -> str:
         ensure_skill(payload, skill_id)
     payload.setdefault("deadlines", []).append(item)
     save_deadlines_payload(payload)
-    board.publish(force=True)
     return (
         f"добавлено: <b>{escape(item['name'])}</b>\n"
         f"{escape(get_human_time(item['time']))}"
@@ -589,7 +606,7 @@ def parse_edit_fields(raw: str) -> dict:
     return updates
 
 
-def cmd_edit(body: str, board: Board) -> str:
+def cmd_edit(body: str) -> str:
     body = (body or "").strip()
     if "|" in body:
         query, rest = body.split("|", 1)
@@ -624,14 +641,13 @@ def cmd_edit(body: str, board: Board) -> str:
     for skill_id in deadline_skills(item):
         ensure_skill(payload, skill_id)
     save_deadlines_payload(payload)
-    board.publish(force=True)
     return (
         f"изменено: <b>{escape(item['name'])}</b>\n"
         f"{escape(get_human_time(item['time']))}"
     )
 
 
-def cmd_delete(body: str, board: Board) -> str:
+def cmd_delete(body: str) -> str:
     err, removed, payload = find_deadline(body)
     if err:
         if not (body or "").strip():
@@ -639,7 +655,6 @@ def cmd_delete(body: str, board: Board) -> str:
         return err
     payload["deadlines"] = [d for d in payload.get("deadlines") or [] if d is not removed]
     save_deadlines_payload(payload)
-    board.publish(force=True)
     return f"удалено: <b>{escape(removed['name'])}</b>"
 
 
@@ -651,16 +666,23 @@ def cmd_list() -> list[str]:
     return get_message_parts(warnings=False, limit=LIST_LIMIT)
 
 
+def cmd_refresh(board: Board) -> str:
+    board.replace()
+    return "доска обновлена"
+
+
 def handle_command(command: str, body: str, board: Board) -> str | list[str] | None:
     command = command.lower()
     if command in ("help", "start"):
         return HELP_TEXT
     if command == "add":
-        return cmd_add(body, board)
+        return cmd_add(body)
     if command == "edit":
-        return cmd_edit(body, board)
+        return cmd_edit(body)
     if command in ("delete", "del", "remove"):
-        return cmd_delete(body, board)
+        return cmd_delete(body)
+    if command == "refresh":
+        return cmd_refresh(board)
     if command in ("list", "deadlines", "board"):
         return cmd_list()
     if command == "all":
@@ -703,6 +725,7 @@ def setup_bot() -> None:
     try:
         telegram_request("setMyCommands", {
             "commands": [
+                {"command": "refresh", "description": "Обновить доску"},
                 {"command": "all", "description": "Все лабы"},
                 {"command": "list", "description": "Ближайшие 5 лаб"},
                 {"command": "add", "description": "Добавить дедлайн"},
@@ -718,17 +741,16 @@ def setup_bot() -> None:
 def main() -> None:
     setup_bot()
     board = Board()
-    board.publish(force=True)
+    board.publish_if_warnings_changed()
     offset = 0
-    last_refresh = time.time()
     logging.info("Polling Telegram for commands")
 
     while True:
         try:
             data = telegram_request(
                 "getUpdates",
-                {"timeout": 25, "offset": offset, "allowed_updates": ["message"]},
-                timeout=40,
+                {"timeout": 50, "offset": offset, "allowed_updates": ["message"]},
+                timeout=70,
             )
             for update in data.get("result") or []:
                 offset = update["update_id"] + 1
@@ -747,10 +769,7 @@ def main() -> None:
             logging.error(f"Polling error: {e}")
             time.sleep(5)
 
-        now = time.time()
-        if now - last_refresh >= REFRESH_SECONDS:
-            board.publish()
-            last_refresh = now
+        board.publish_if_warnings_changed()
 
 
 if __name__ == '__main__':

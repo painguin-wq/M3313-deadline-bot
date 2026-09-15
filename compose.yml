@@ -2,7 +2,10 @@ services:
   deadline_bot:
     build: .
     env_file: .env
+    cpus: 0.25
+    mem_limit: 192m
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./DEADLINES.json:/app/DEADLINES.json
+      - ./board-data:/app/board-data
     restart: unless-stopped
