@@ -321,15 +321,14 @@ def warning_for(item: dict) -> tuple[str, int] | None:
     today = now_msk().date()
     due_day = due.date()
     days_left = (due_day - today).days
-    name = display_name(item)
     if days_left == 0:
-        return (f"Сегодня ({due.strftime('%d.%m')}) сдача {name}", 0)
+        return (f"Сегодня ({due.strftime('%d.%m')}) сдача", 0)
     if days_left == 1:
-        return (f"Завтра ({due.strftime('%d.%m')}) сдача {name}", 1)
+        return (f"Завтра ({due.strftime('%d.%m')}) сдача", 1)
     if days_left < 7:
-        return (f"Срочно {name}", 2)
+        return ("Срочно", 2)
     if days_left == 7:
-        return (f"Пора начинать {name}", 3)
+        return ("Пора начинать", 3)
     return None
 
 
@@ -349,11 +348,12 @@ def format_item_block(item: dict, index: int, *, warnings: bool = True) -> str:
         when = f"<a href='{generate_link(item)}'>{when}</a>"
     left = get_human_timedelta(item['time'])
     lines = []
-    if warnings:
-        warn = warning_prefix(item)
-        if warn:
-            lines.append(warn.rstrip())
-    lines.append(f"{index}. <b>{title}</b> — {left}")
+    warn = warning_prefix(item) if warnings else ""
+    if warn:
+        lines.append(f"{index}. {warn.rstrip()} — {left}")
+        lines.append(f"<b>{title}</b>")
+    else:
+        lines.append(f"{index}. <b>{title}</b> — {left}")
     lines.append(when)
     details = []
     if item.get('place'):
