@@ -157,7 +157,7 @@
       ],
       "url": "https://uml.itmo.is/labs/lab-2/",
       "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
-      "description": "8 баллов. Тема на семестр уникальна в группе. Граница, стейкхолдеры, ≥5 ФТ, ≥2 НФТ, ≥2 ограничения, таблица цель—возможность—требование. Выдача 15.09, защита каждые 2 недели.",
+      "description": "8 баллов. Тема: Система управления рабочими сменами сотрудников розничных магазинов. Граница, стейкхолдеры, ≥5 ФТ, ≥2 НФТ, ≥2 ограничения, таблица цель—возможность—требование.",
       "type": ""
     },
     {
@@ -234,7 +234,7 @@
         "telecom"
       ],
       "url": "https://t.me/c/3582293127/20",
-      "description": "12 баллов. Выдача 14.09, защита 22.09 (нед. 5). CentOS+Debian, ifconfig/ip, nmcli, netplan, bonding. Штраф −2 за пропуск ддл. Max 2 лабы за посещение; 3 фейла подряд — бан. Можно пары по 2. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva №работы.",
+      "description": "12 баллов. Выдача 14.09, защита 22.09 (нед. 5). CentOS+Debian, ifconfig/ip, nmcli, netplan, bonding. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva №работы.",
       "type": ""
     },
     {
@@ -420,7 +420,7 @@
         "ml"
       ],
       "url": "https://docs.google.com/document/d/1sUOnOO_r_LmC6Epub78oS0PJHX_Kz3nqg9s_8msvjWE/edit",
-      "description": "10 баллов, обязательная. PR в Classroom, замечания ревью обязательны. Ориентир 23.09, как первый колок. Ссылка на репо будет в задании.",
+      "description": "10 баллов, обязательная. PR в Classroom, замечания ревью обязательны.",
       "type": ""
     },
     {
