@@ -325,9 +325,9 @@ def warning_for(item: dict) -> tuple[str, int] | None:
         return (f"Сегодня ({due.strftime('%d.%m')}) сдача", 0)
     if days_left == 1:
         return (f"Завтра ({due.strftime('%d.%m')}) сдача", 1)
-    if days_left < 7:
+    if days_left < 3:
         return ("Срочно", 2)
-    if days_left == 7:
+    if days_left <= 7:
         return ("Пора начинать", 3)
     return None
 
