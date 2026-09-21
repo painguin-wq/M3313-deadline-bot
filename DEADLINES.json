@@ -1,17 +1,53 @@
 {
   "skills": [
-    {"id": "frontend", "title": "🎨 Frontend / Web"},
-    {"id": "uml", "title": "📐 UML / проектирование"},
-    {"id": "dwh", "title": "🗄 Хранилища данных"},
-    {"id": "ml", "title": "🤖 ML / DS"},
-    {"id": "telecom", "title": "📡 Сети / телеком"},
-    {"id": "algorithms", "title": "🧠 Алгоритмы"},
-    {"id": "math", "title": "📐 Математика"},
-    {"id": "databases", "title": "🗄 Базы данных"},
-    {"id": "backend", "title": "⚙️ Backend"},
-    {"id": "security", "title": "🔐 Безопасность"},
-    {"id": "systems", "title": "💻 Системное программирование"},
-    {"id": "soft-skills", "title": "🗣 Soft skills"}
+    {
+      "id": "frontend",
+      "title": "🎨 Frontend / Web"
+    },
+    {
+      "id": "uml",
+      "title": "📐 UML / проектирование"
+    },
+    {
+      "id": "dwh",
+      "title": "🗄 Хранилища данных"
+    },
+    {
+      "id": "ml",
+      "title": "🤖 ML / DS"
+    },
+    {
+      "id": "telecom",
+      "title": "📡 Сети / телеком"
+    },
+    {
+      "id": "algorithms",
+      "title": "🧠 Алгоритмы"
+    },
+    {
+      "id": "math",
+      "title": "📐 Математика"
+    },
+    {
+      "id": "databases",
+      "title": "🗄 Базы данных"
+    },
+    {
+      "id": "backend",
+      "title": "⚙️ Backend"
+    },
+    {
+      "id": "security",
+      "title": "🔐 Безопасность"
+    },
+    {
+      "id": "systems",
+      "title": "💻 Системное программирование"
+    },
+    {
+      "id": "soft-skills",
+      "title": "🗣 Soft skills"
+    }
   ],
   "deadlines": [
     {
@@ -19,7 +55,9 @@
       "time": "16 Sep 2026 15:30:00 GMT+3",
       "place": "ауд. 2414, Кронверкский пр., 49 (ср 15:30–17:00 и 17:10–18:40)",
       "teacher": "Папикян С.С.",
-      "skills": ["frontend"],
+      "skills": [
+        "frontend"
+      ],
       "url": "https://github.com/is-web-y28/frontend-labs/blob/main/lab-1.md",
       "description": "7 баллов. HTML без CSS: семантика, списки, цитата, strong/em/del/ins. Свой репозиторий (форк задания не нужен). Штраф за просрочку 25%.",
       "type": ""
@@ -29,7 +67,9 @@
       "time": "30 Sep 2026 15:30:00 GMT+3",
       "place": "ауд. 2414, Кронверкский пр., 49 (ср 15:30–17:00 и 17:10–18:40)",
       "teacher": "Папикян С.С.",
-      "skills": ["frontend"],
+      "skills": [
+        "frontend"
+      ],
       "url": "https://github.com/is-web-y28/frontend-labs",
       "description": "12 баллов. CSS и адаптив. Материалы на GitHub is-web-y28. Штраф за просрочку 25%.",
       "type": ""
@@ -39,7 +79,9 @@
       "time": "14 Oct 2026 15:30:00 GMT+3",
       "place": "ауд. 2414, Кронверкский пр., 49 (ср 15:30–17:00 и 17:10–18:40)",
       "teacher": "Папикян С.С.",
-      "skills": ["frontend"],
+      "skills": [
+        "frontend"
+      ],
       "url": "https://github.com/is-web-y28/frontend-labs",
       "description": "11 баллов. Интерактив на клиенте. Штраф за просрочку 25%.",
       "type": ""
@@ -49,7 +91,9 @@
       "time": "28 Oct 2026 15:30:00 GMT+3",
       "place": "ауд. 2414, Кронверкский пр., 49 (ср 15:30–17:00 и 17:10–18:40)",
       "teacher": "Папикян С.С.",
-      "skills": ["frontend"],
+      "skills": [
+        "frontend"
+      ],
       "url": "https://github.com/is-web-y28/frontend-labs",
       "description": "12 баллов. Самостоятельное приложение на фреймворке. Штраф за просрочку 25%.",
       "type": ""
@@ -59,7 +103,9 @@
       "time": "11 Nov 2026 15:30:00 GMT+3",
       "place": "ауд. 2414, Кронверкский пр., 49 (ср 15:30–17:00 и 17:10–18:40)",
       "teacher": "Папикян С.С.",
-      "skills": ["frontend"],
+      "skills": [
+        "frontend"
+      ],
       "url": "https://github.com/is-web-y28/frontend-labs",
       "description": "10 баллов. Этап проекта. Штраф за просрочку 25%.",
       "type": ""
@@ -69,7 +115,9 @@
       "time": "25 Nov 2026 15:30:00 GMT+3",
       "place": "ауд. 2414, Кронверкский пр., 49 (ср 15:30–17:00 и 17:10–18:40)",
       "teacher": "Папикян С.С.",
-      "skills": ["frontend"],
+      "skills": [
+        "frontend"
+      ],
       "url": "https://github.com/is-web-y28/frontend-labs",
       "description": "14 баллов. Этап проекта. Штраф за просрочку 25%.",
       "type": ""
@@ -79,7 +127,9 @@
       "time": "09 Dec 2026 15:30:00 GMT+3",
       "place": "ауд. 2414, Кронверкский пр., 49 (ср 15:30–17:00 и 17:10–18:40)",
       "teacher": "Папикян С.С.",
-      "skills": ["frontend"],
+      "skills": [
+        "frontend"
+      ],
       "url": "https://github.com/is-web-y28/frontend-labs",
       "description": "14 баллов. Финальный этап проекта, тему согласовать заранее. Штраф за просрочку 25%. Всего за курс 80 баллов.",
       "type": ""
@@ -89,7 +139,9 @@
       "time": "15 Sep 2026 18:50:00 GMT+3",
       "place": "ауд. 2335, Кронверкский пр., 49 (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Кравченко Д.А.",
-      "skills": ["uml"],
+      "skills": [
+        "uml"
+      ],
       "url": "https://uml.itmo.is/labs/lab-1/",
       "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "5 баллов. Сдача 15.09. Перерисовать 5 диаграмм в одном проекте Visual Paradigm Community Edition, без водяных знаков. Отчёт: ФИО, группа, экспорт диаграмм (не скрины редактора).",
@@ -100,7 +152,9 @@
       "time": "29 Sep 2026 18:50:00 GMT+3",
       "place": "ауд. 2335, Кронверкский пр., 49 (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Кравченко Д.А.",
-      "skills": ["uml"],
+      "skills": [
+        "uml"
+      ],
       "url": "https://uml.itmo.is/labs/lab-2/",
       "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "8 баллов. Тема на семестр уникальна в группе. Граница, стейкхолдеры, ≥5 ФТ, ≥2 НФТ, ≥2 ограничения, таблица цель—возможность—требование. Выдача 15.09, защита каждые 2 недели.",
@@ -111,7 +165,9 @@
       "time": "13 Oct 2026 18:50:00 GMT+3",
       "place": "ауд. 2335, Кронверкский пр., 49 (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Кравченко Д.А.",
-      "skills": ["uml"],
+      "skills": [
+        "uml"
+      ],
       "url": "https://uml.itmo.is/labs/lab-3/",
       "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "7 баллов. Общая + детализированная use case и краткая спецификация. С ЛР 3 всё в одном проекте VP. Выдача 29.09.",
@@ -122,7 +178,9 @@
       "time": "27 Oct 2026 18:50:00 GMT+3",
       "place": "ауд. 2335, Кронверкский пр., 49 (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Кравченко Д.А.",
-      "skills": ["uml"],
+      "skills": [
+        "uml"
+      ],
       "url": "https://uml.itmo.is/labs/lab-4/",
       "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "8 баллов. Сценарий с альтернативами и одна activity-диаграмма. Выдача 13.10.",
@@ -133,7 +191,9 @@
       "time": "10 Nov 2026 18:50:00 GMT+3",
       "place": "ауд. 2335, Кронверкский пр., 49 (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Кравченко Д.А.",
-      "skills": ["uml"],
+      "skills": [
+        "uml"
+      ],
       "url": "https://uml.itmo.is/labs/lab-5/",
       "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "14 баллов. Словарь, концептуальная и техническая модели, ADR, пакеты/слои, компоненты. Выдача 27.10.",
@@ -144,7 +204,9 @@
       "time": "24 Nov 2026 18:50:00 GMT+3",
       "place": "ауд. 2335, Кронверкский пр., 49 (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Кравченко Д.А.",
-      "skills": ["uml"],
+      "skills": [
+        "uml"
+      ],
       "url": "https://uml.itmo.is/labs/lab-6/",
       "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "8 баллов. НФТ, ограничения и deployment. Выдача 10.11. Итого за лабы 60 баллов, отдельной лабы по C4 нет.",
@@ -155,7 +217,9 @@
       "time": "08 Dec 2026 18:50:00 GMT+3",
       "place": "ауд. 2335, Кронверкский пр., 49 (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Кравченко Д.А.",
-      "skills": ["uml"],
+      "skills": [
+        "uml"
+      ],
       "url": "https://uml.itmo.is/labs/lab-7/",
       "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
       "description": "10 баллов. State machine предметного объекта и sequence сценария. Выдача 24.11, защита 08.12.",
@@ -166,7 +230,9 @@
       "time": "22 Sep 2026 22:00:00 GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
-      "skills": ["telecom"],
+      "skills": [
+        "telecom"
+      ],
       "url": "https://t.me/c/3582293127/20",
       "description": "12 баллов. Выдача 14.09, защита 22.09 (нед. 5). CentOS+Debian, ifconfig/ip, nmcli, netplan, bonding. Тема письма: M3313 ФИО №работы. Штраф −2 за пропуск ддл. Max 2 лабы за посещение; 3 фейла подряд — бан. Можно пары по 2.",
       "type": ""
@@ -176,7 +242,9 @@
       "time": "06 Oct 2026 22:00:00 GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
-      "skills": ["telecom"],
+      "skills": [
+        "telecom"
+      ],
       "url": "https://t.me/c/3582293127/20",
       "description": "10 баллов. Защита 06.10 (нед. 7), следующая практика после ЛР 1. 4 варианта subnetting + ipcalc. Обязательна для «удовлетворительно» вместе с ЛР 1 и 5.",
       "type": ""
@@ -186,7 +254,9 @@
       "time": "20 Oct 2026 22:00:00 GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
-      "skills": ["telecom"],
+      "skills": [
+        "telecom"
+      ],
       "url": "https://t.me/c/3582293127/20",
       "description": "12 баллов. Защита 20.10 (нед. 9). Тема на практике. 7 работ; 2 теста по 9 баллов (оба обязательны, зачёт от 60%).",
       "type": ""
@@ -196,7 +266,9 @@
       "time": "03 Nov 2026 22:00:00 GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
-      "skills": ["telecom"],
+      "skills": [
+        "telecom"
+      ],
       "url": "https://t.me/itsmdao",
       "description": "12 баллов. Защита 03.11 (нед. 11). Для «удовлетворительно» нужны 1, 4 и 5. 4 работы ≥44 → 3; 6 ≥68 → 4; 7 ≥80 → 5.",
       "type": ""
@@ -206,7 +278,9 @@
       "time": "17 Nov 2026 22:00:00 GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
-      "skills": ["telecom"],
+      "skills": [
+        "telecom"
+      ],
       "url": "https://t.me/itsmdao",
       "description": "12 баллов. Защита 17.11 (нед. 13). Обязательна для «удовлетворительно».",
       "type": ""
@@ -216,7 +290,9 @@
       "time": "01 Dec 2026 22:00:00 GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
-      "skills": ["telecom"],
+      "skills": [
+        "telecom"
+      ],
       "url": "https://t.me/itsmdao",
       "description": "12 баллов. Защита 01.12 (нед. 15). К декабрю сдача жёстче.",
       "type": ""
@@ -226,7 +302,9 @@
       "time": "15 Dec 2026 22:00:00 GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
-      "skills": ["telecom"],
+      "skills": [
+        "telecom"
+      ],
       "url": "https://t.me/itsmdao",
       "description": "12 баллов. Защита на последней паре 15.12 (нед. 17). Для отлично все 7 защит и ≥80 баллов.",
       "type": ""
@@ -236,8 +314,11 @@
       "time": "29 Sep 2026 11:20:00 GMT+3",
       "place": "ауд. 2430, Кронверкский пр., 49 лит.А (вт 09:50–11:20)",
       "teacher": "Повышев В.В.",
-      "skills": ["dwh", "databases"],
-      "url": "",
+      "skills": [
+        "dwh",
+        "databases"
+      ],
+      "url": "https://disk.yandex.ru/i/x0LnDWIebQmNjQ",
       "description": "10 баллов. В методичке 3–4 нед.; сдаём вместе с ЛР 2 на 6 нед. (29.09). Два источника Запад/Восток. source_row_guid, modified_at. Штраф 10% за полную неделю просрочки.",
       "type": ""
     },
@@ -246,8 +327,11 @@
       "time": "29 Sep 2026 11:20:00 GMT+3",
       "place": "ауд. 2430, Кронверкский пр., 49 лит.А (вт 09:50–11:20)",
       "teacher": "Повышев В.В.",
-      "skills": ["dwh", "databases"],
-      "url": "",
+      "skills": [
+        "dwh",
+        "databases"
+      ],
+      "url": "https://disk.yandex.ru/i/x0LnDWIebQmNjQ",
       "description": "10 баллов. В методичке 5 нед. (22.09); сдаём 29.09 (нед. 6) вместе с ЛР 1. Kimball/Inmon/Data Vault, SCD, DDL + тестовый скрипт, повторный запуск.",
       "type": ""
     },
@@ -256,8 +340,11 @@
       "time": "06 Oct 2026 11:20:00 GMT+3",
       "place": "ауд. 2430, Кронверкский пр., 49 лит.А (вт 09:50–11:20)",
       "teacher": "Повышев В.В.",
-      "skills": ["dwh", "databases"],
-      "url": "",
+      "skills": [
+        "dwh",
+        "databases"
+      ],
+      "url": "https://disk.yandex.ru/i/x0LnDWIebQmNjQ",
       "description": "10 баллов. 7 неделя, 06.10. Зерно неделя×филиал×товар/категория. Сравнить запрос к деталям DWH и к витрине.",
       "type": ""
     },
@@ -266,8 +353,11 @@
       "time": "10 Nov 2026 11:20:00 GMT+3",
       "place": "ауд. 2430, Кронверкский пр., 49 лит.А (вт 09:50–11:20)",
       "teacher": "Повышев В.В.",
-      "skills": ["dwh", "databases"],
-      "url": "",
+      "skills": [
+        "dwh",
+        "databases"
+      ],
+      "url": "https://disk.yandex.ru/i/x0LnDWIebQmNjQ",
       "description": "25 баллов, обязательная. 12 неделя, 10.11. Incremental/CDC из двух филиалов, идемпотентность, журнал запусков. Без неё курс не закрыть.",
       "type": ""
     },
@@ -276,8 +366,11 @@
       "time": "24 Nov 2026 11:20:00 GMT+3",
       "place": "ауд. 2430, Кронверкский пр., 49 лит.А (вт 09:50–11:20)",
       "teacher": "Повышев В.В.",
-      "skills": ["dwh", "databases"],
-      "url": "",
+      "skills": [
+        "dwh",
+        "databases"
+      ],
+      "url": "https://disk.yandex.ru/i/x0LnDWIebQmNjQ",
       "description": "5 баллов. 14 неделя, 24.11. Пересчёт витрины за период без удвоения агрегатов (DELETE+INSERT или MERGE).",
       "type": ""
     },
@@ -286,8 +379,11 @@
       "time": "08 Dec 2026 11:20:00 GMT+3",
       "place": "ауд. 2430, Кронверкский пр., 49 лит.А (вт 09:50–11:20)",
       "teacher": "Повышев В.В.",
-      "skills": ["dwh", "databases"],
-      "url": "",
+      "skills": [
+        "dwh",
+        "databases"
+      ],
+      "url": "https://disk.yandex.ru/i/x0LnDWIebQmNjQ",
       "description": "20 баллов. 16 неделя, 08.12. Restore филиала из хранилища за интервал. Экзамен 20 баллов по расписанию; вместо экзамена — модуль миграции.",
       "type": ""
     },
@@ -296,7 +392,9 @@
       "time": "23 Sep 2026 13:00:00 GMT+3",
       "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
+      "skills": [
+        "ml"
+      ],
       "url": "https://docs.google.com/document/d/19_TwyxkLvVrSAvPsq-7_hndZFYa2tkJxLumCkTDchvI/edit",
       "description": "10 баллов. Окно без штрафа 3 недели от лекции 08.09 (до 29.09); 07.10 уже с просрочкой. 1 пересдача.",
       "type": ""
@@ -306,7 +404,9 @@
       "time": "23 Sep 2026 13:00:00 GMT+3",
       "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
+      "skills": [
+        "ml"
+      ],
       "url": "https://docs.google.com/document/d/1JrqIGzvHxasU1ShijO7I8j49hmRbHt13347Zy5qnPfg/edit",
       "description": "10 баллов. Окно без штрафа 3 недели от лекции 15.09 (до 06.10); запас 07.10. 1 пересдача.",
       "type": ""
@@ -316,8 +416,10 @@
       "time": "23 Sep 2026 23:59:00 GMT+3",
       "place": "GitHub Classroom; на практике 2244 могут спросить код",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
-      "url": "",
+      "skills": [
+        "ml"
+      ],
+      "url": "https://docs.google.com/document/d/1sUOnOO_r_LmC6Epub78oS0PJHX_Kz3nqg9s_8msvjWE/edit",
       "description": "10 баллов, обязательная. PR в Classroom, замечания ревью обязательны. Ориентир 23.09, как первый колок. Ссылка на репо будет в задании.",
       "type": ""
     },
@@ -326,8 +428,10 @@
       "time": "07 Oct 2026 23:59:00 GMT+3",
       "place": "GitHub Classroom",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
-      "url": "",
+      "skills": [
+        "ml"
+      ],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "По желанию, в БАРС не идёт. Кластеризация / PCA. Ориентир пара 07.10.",
       "type": ""
     },
@@ -336,7 +440,9 @@
       "time": "07 Oct 2026 13:00:00 GMT+3",
       "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
+      "skills": [
+        "ml"
+      ],
       "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "10 баллов. Окно без штрафа до 27.10 (3 недели от лекции 06.10): пары 07.10 и 21.10. 1 пересдача.",
       "type": ""
@@ -346,7 +452,9 @@
       "time": "21 Oct 2026 13:00:00 GMT+3",
       "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
+      "skills": [
+        "ml"
+      ],
       "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "10 баллов. Окно без штрафа до 10.11: практика в окне 21.10, 18.11 уже с просрочкой. 1 пересдача.",
       "type": ""
@@ -356,8 +464,10 @@
       "time": "21 Oct 2026 23:59:00 GMT+3",
       "place": "GitHub Classroom",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
-      "url": "",
+      "skills": [
+        "ml"
+      ],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "По желанию, в БАРС не идёт. NLP / трансформеры. Ориентир 21.10.",
       "type": ""
     },
@@ -366,8 +476,10 @@
       "time": "18 Nov 2026 23:59:00 GMT+3",
       "place": "GitHub Classroom; на практике 2244 могут спросить код",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
-      "url": "",
+      "skills": [
+        "ml"
+      ],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "10 баллов, обязательная. В таблице на неделе 11 (10.11). Ближайшая практика после каникульного разрыва — 18.11.",
       "type": ""
     },
@@ -376,7 +488,9 @@
       "time": "18 Nov 2026 13:00:00 GMT+3",
       "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
+      "skills": [
+        "ml"
+      ],
       "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "10 баллов. Окно без штрафа до 01.12: пары 18.11 и запас 02.12. 1 пересдача.",
       "type": ""
@@ -386,7 +500,9 @@
       "time": "18 Nov 2026 13:00:00 GMT+3",
       "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
+      "skills": [
+        "ml"
+      ],
       "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "10 баллов. Окно без штрафа до 08.12: пары 18.11 и 02.12. 1 пересдача.",
       "type": ""
@@ -396,8 +512,10 @@
       "time": "18 Nov 2026 23:59:00 GMT+3",
       "place": "GitHub Classroom",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
-      "url": "",
+      "skills": [
+        "ml"
+      ],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "По желанию, в БАРС не идёт. CV. Ориентир 18.11.",
       "type": ""
     },
@@ -406,7 +524,9 @@
       "time": "02 Dec 2026 13:00:00 GMT+3",
       "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
+      "skills": [
+        "ml"
+      ],
       "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "10 баллов. Окно без штрафа до 22.12: пары 02.12 и 16.12. 1 пересдача.",
       "type": ""
@@ -416,8 +536,10 @@
       "time": "02 Dec 2026 23:59:00 GMT+3",
       "place": "GitHub Classroom",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
-      "url": "",
+      "skills": [
+        "ml"
+      ],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "По желанию, в БАРС не идёт. Звук / речь. Ориентир 02.12.",
       "type": ""
     },
@@ -426,7 +548,9 @@
       "time": "16 Dec 2026 13:00:00 GMT+3",
       "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 09:50–11:20 и 11:30–13:00)",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
+      "skills": [
+        "ml"
+      ],
       "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "10 баллов. Окно без штрафа до 29.12: практика 16.12. 1 пересдача.",
       "type": ""
@@ -436,8 +560,10 @@
       "time": "16 Dec 2026 23:59:00 GMT+3",
       "place": "GitHub Classroom",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
-      "url": "",
+      "skills": [
+        "ml"
+      ],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "По желанию, в БАРС не идёт. Генеративные модели. Ориентир последняя пара 16.12.",
       "type": ""
     },
@@ -446,8 +572,10 @@
       "time": "16 Dec 2026 23:59:00 GMT+3",
       "place": "GitHub Classroom",
       "teacher": "Захаров К.С.",
-      "skills": ["ml"],
-      "url": "",
+      "skills": [
+        "ml"
+      ],
+      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "По желанию, в БАРС не идёт. Рекомендации. Ориентир 16.12.",
       "type": ""
     }
