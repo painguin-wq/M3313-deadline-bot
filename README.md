@@ -4,7 +4,7 @@ Telegram bot [`@m3313_deadinside_bot`](https://t.me/m3313_deadinside_bot) for th
 
 Each deadline is shown with **time**, **place**, **teacher**, **skills**, **link**, and a **short description**.
 
-The group board is **not** edited on a timer. It is replaced (old messages deleted, new ones sent) only on `/refresh` or when warning levels change (Пора начинать / Срочно / Завтра / Сегодня).
+The group board is replaced (old messages deleted, new ones sent) on `/refresh`, when warning levels change, or every day at 12:00 MSK.
 
 # Commands (in the group chat)
 

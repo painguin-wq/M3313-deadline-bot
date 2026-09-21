@@ -498,6 +498,7 @@ class Board:
     def __init__(self):
         self.message_ids: list[int] = []
         self.warning_key = ""
+        self.last_noon_date = ""
         self._load()
 
     def _load(self) -> None:
@@ -506,6 +507,7 @@ class Board:
                 data = json.loads(BOARD_PATH.read_text(encoding="utf-8"))
                 self.message_ids = [int(x) for x in (data.get("message_ids") or []) if x]
                 self.warning_key = data.get("warning_key") or ""
+                self.last_noon_date = data.get("last_noon_date") or ""
             except (OSError, json.JSONDecodeError, TypeError, ValueError) as e:
                 logging.warning(f"Could not load board state: {e}")
         if EDIT_MESSAGE_ID and EDIT_MESSAGE_ID not in self.message_ids:
@@ -515,7 +517,11 @@ class Board:
         BOARD_PATH.parent.mkdir(parents=True, exist_ok=True)
         BOARD_PATH.write_text(
             json.dumps(
-                {"message_ids": self.message_ids, "warning_key": self.warning_key},
+                {
+                    "message_ids": self.message_ids,
+                    "warning_key": self.warning_key,
+                    "last_noon_date": self.last_noon_date,
+                },
                 ensure_ascii=False,
                 indent=2,
             ),
@@ -547,6 +553,22 @@ class Board:
             return
         logging.info("Warnings changed, replacing board")
         self.replace()
+        now = now_msk()
+        if now.hour >= 12:
+            self.last_noon_date = now.date().isoformat()
+            self._save()
+
+    def publish_daily_noon(self) -> None:
+        now = now_msk()
+        if now.hour < 12:
+            return
+        today = now.date().isoformat()
+        if self.last_noon_date == today:
+            return
+        logging.info("Daily noon board refresh")
+        self.replace()
+        self.last_noon_date = today
+        self._save()
 
 
 def cmd_add(body: str) -> str:
@@ -769,6 +791,7 @@ def main() -> None:
             time.sleep(5)
 
         board.publish_if_warnings_changed()
+        board.publish_daily_noon()
 
 
 if __name__ == '__main__':
