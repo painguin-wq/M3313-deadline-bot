@@ -37,8 +37,8 @@ def validate_config() -> None:
         errors.append("MAIN_GROUP_ID: Telegram group ID is required")
     if EDIT_MESSAGE_ID and not isinstance(EDIT_MESSAGE_ID, int):
         errors.append("EDIT_MESSAGE_ID: Must be a valid integer")
-    if ADD_CALENDAR_LINK not in ('true', 'false', ''):
-        errors.append("ADD_CALENDAR_LINK: Must be 'true' or 'false'")
+    if ADD_CALENDAR_LINK and ADD_CALENDAR_LINK not in ('true', 'false'):
+        errors.append(f"ADD_CALENDAR_LINK: Must be 'true' or 'false', got '{ADD_CALENDAR_LINK}'")
     
     if errors:
         error_msg = "Configuration validation failed:\n" + "\n".join(f"  • {e}" for e in errors)
