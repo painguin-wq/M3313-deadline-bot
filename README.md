@@ -36,3 +36,4 @@ docker compose up --build
 ```
 
 On push to `main`, GitHub Actions writes `.env` from `TOKEN` and `MAIN_GROUP_ID` and deploys.
+# CI/CD configured
