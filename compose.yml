@@ -1,11 +1,20 @@
 services:
   deadline_bot:
-    build: .
+    image: ghcr.io/painguin-wq/deadline-bot:latest
+    pull_policy: always
     env_file: .env
-    cpus: 0.25
+    environment:
+      PYTHONUNBUFFERED: "1"
+    cpus: "0.25"
     mem_limit: 192m
+    mem_reservation: 128m
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./DEADLINES.json:/app/DEADLINES.json
       - ./board-data:/app/board-data
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -4,10 +4,17 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Build and Push Docker Image"]
+    types:
+      - completed
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
 
     steps:
       - name: Checkout code
@@ -20,6 +27,7 @@ jobs:
           MAIN_GROUP_ID=${{ secrets.MAIN_GROUP_ID }}
           EDIT_MESSAGE_ID=${{ secrets.EDIT_MESSAGE_ID }}
           ADD_CALENDAR_LINK=${{ secrets.ADD_CALENDAR_LINK }}
+          ADMIN_USER_IDS=${{ secrets.ADMIN_USER_IDS }}
           EOF
 
       - name: Setup SSH Key
@@ -29,11 +37,28 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -p "${{ secrets.SSH_PORT }}" -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: Deploy Files using Rsync
+      - name: Deploy Docker Compose and .env
         run: |
-          rsync -avz --exclude='.git' -e "ssh -p ${{ secrets.SSH_PORT }}" $GITHUB_WORKSPACE/ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PROJECT_PATH }}
+          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" \
+            compose.yml Dockerfile .dockerignore .env \
+            ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PROJECT_PATH }}/
 
-      - name: Restart bot
+      - name: Deploy application files
+        run: |
+          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" \
+            main.py DEADLINES.json \
+            ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PROJECT_PATH }}/
+
+      - name: Pull latest image and restart bot
+        run: |
+          ssh -p "${{ secrets.SSH_PORT }}" ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }} << 'ENDSSH'
+          cd ${{ secrets.PROJECT_PATH }}
+          docker pull ghcr.io/${{ github.repository_owner }}/deadline-bot:latest
+          docker compose up -d --pull always
+          docker compose logs --tail=20
+          ENDSSH
+
+      - name: Verify deployment
         run: |
           ssh -p "${{ secrets.SSH_PORT }}" ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }} \
-            "cd ${{ secrets.PROJECT_PATH }} && docker compose up -d --build"
+            "cd ${{ secrets.PROJECT_PATH }} && docker compose ps"

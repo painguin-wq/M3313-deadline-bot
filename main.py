@@ -27,14 +27,33 @@ ADMIN_USER_IDS = {
     int(x) for x in (os.getenv("ADMIN_USER_IDS") or "").replace(" ", "").split(",") if x
 }
 
-assert TOKEN, "Missing token!"
-assert MAIN_GROUP_ID, "Missing group ID!"
+def validate_config() -> None:
+    """Validate all required environment variables at startup."""
+    errors = []
+    
+    if not TOKEN:
+        errors.append("TOKEN: Bot API token is required")
+    if not MAIN_GROUP_ID:
+        errors.append("MAIN_GROUP_ID: Telegram group ID is required")
+    if EDIT_MESSAGE_ID and not isinstance(EDIT_MESSAGE_ID, int):
+        errors.append("EDIT_MESSAGE_ID: Must be a valid integer")
+    if ADD_CALENDAR_LINK not in ('true', 'false', ''):
+        errors.append("ADD_CALENDAR_LINK: Must be 'true' or 'false'")
+    
+    if errors:
+        error_msg = "Configuration validation failed:\n" + "\n".join(f"  • {e}" for e in errors)
+        logging.error(error_msg)
+        raise ValueError(error_msg)
+    
+    logging.info("Configuration validated successfully")
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[logging.StreamHandler(sys.stdout)],
 )
+
+validate_config()
 
 TYPE_PREFIX_RE = re.compile(r'^\[([^\]]+)\]\s*', flags=re.IGNORECASE)
 CMD_RE = re.compile(r'^/([A-Za-z]+)(?:@[\w_]+)?(?:\s+(.*))?$', re.DOTALL)
