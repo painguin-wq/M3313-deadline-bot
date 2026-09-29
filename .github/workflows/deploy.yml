@@ -1,9 +1,6 @@
-name: Deploy to Server
+name: Deploy to Server (Optional)
 
 on:
-  push:
-    branches:
-      - main
   workflow_run:
     workflows: ["Build and Push Docker Image"]
     types:
@@ -14,7 +11,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
+    if: |
+      github.event.workflow_run.conclusion == 'success' && 
+      (secrets.SSH_PRIVATE_KEY != '' && secrets.SERVER_IP != '')
 
     steps:
       - name: Checkout code
@@ -35,23 +34,23 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p "${{ secrets.SSH_PORT }}" -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p "${{ secrets.SSH_PORT || 22 }}" -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
       - name: Deploy Docker Compose and .env
         run: |
-          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" \
+          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT || 22 }}" \
             compose.yml Dockerfile .dockerignore .env \
             ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PROJECT_PATH }}/
 
       - name: Deploy application files
         run: |
-          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" \
+          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT || 22 }}" \
             main.py DEADLINES.json \
             ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PROJECT_PATH }}/
 
       - name: Pull latest image and restart bot
         run: |
-          ssh -p "${{ secrets.SSH_PORT }}" ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }} << 'ENDSSH'
+          ssh -p "${{ secrets.SSH_PORT || 22 }}" ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }} << 'ENDSSH'
           cd ${{ secrets.PROJECT_PATH }}
           docker pull ghcr.io/${{ github.repository_owner }}/deadline-bot:latest
           docker compose up -d --pull always
@@ -60,5 +59,5 @@ jobs:
 
       - name: Verify deployment
         run: |
-          ssh -p "${{ secrets.SSH_PORT }}" ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }} \
+          ssh -p "${{ secrets.SSH_PORT || 22 }}" ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }} \
             "cd ${{ secrets.PROJECT_PATH }} && docker compose ps"
