@@ -1,7 +1,6 @@
 services:
   deadline_bot:
-    image: ghcr.io/painguin-wq/deadline-bot:latest
-    pull_policy: always
+    image: deadline-bot:local
     env_file: .env
     environment:
       PYTHONUNBUFFERED: "1"
