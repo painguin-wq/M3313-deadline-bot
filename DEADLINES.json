@@ -150,75 +150,63 @@
       "type": ""
     },
     {
-      "name": "Сети: ЛР 1 — Консольные утилиты Linux. ЛР 2 — Работа с адресами IP-сетей",
-      "time": "06 Oct 2026 22:00:00 GMT+3",
-      "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
-      "teacher": "Самигуллин Р.Ф.",
-      "skills": [
-        "telecom"
-      ],
-      "url": "https://t.me/c/3582293127/20",
-      "description": "10 баллов. Защита 06.10 (нед. 7). 4 варианта subnetting + ipcalc. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva №работы.",
-      "type": ""
-    },
-    {
       "name": "Сети: ЛР 3",
-      "time": "20 Oct 2026 22:00:00 GMT+3",
+      "time": "20 Oct 2026 18:50:00 GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
       "skills": [
         "telecom"
       ],
-      "url": "https://t.me/c/3582293127/20",
-      "description": "12 баллов. Защита 20.10 (нед. 9). Тема на практике. 7 работ; 2 теста по 9 баллов (оба обязательны, зачёт от 60%). Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva №работы.",
+      "url": "https://t.me/ITSMDao/326/326",
+      "description": "12 баллов. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva 3",
       "type": ""
     },
     {
       "name": "Сети: ЛР 4",
-      "time": "03 Nov 2026 22:00:00 GMT+3",
+      "time": "03 Nov 2026 18:50:00  GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
       "skills": [
         "telecom"
       ],
-      "url": "https://t.me/itsmdao",
-      "description": "12 баллов. Защита 03.11 (нед. 11). Для «удовлетворительно» нужны 1, 4 и 5. 4 работы ≥44 → 3; 6 ≥68 → 4; 7 ≥80 → 5. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva №работы.",
+      "url": "https://t.me/ITSMDao/326",
+      "description": "12 баллов. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva 4",
       "type": ""
     },
     {
       "name": "Сети: ЛР 5",
-      "time": "17 Nov 2026 22:00:00 GMT+3",
+      "time": "17 Nov 2026 18:50:00  GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
       "skills": [
         "telecom"
       ],
-      "url": "https://t.me/itsmdao",
-      "description": "12 баллов. Защита 17.11 (нед. 13). Обязательна для «удовлетворительно». Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva №работы.",
+      "url": "https://t.me/ITSMDao/326",
+      "description": "12 баллов. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva 5",
       "type": ""
     },
     {
       "name": "Сети: ЛР 6",
-      "time": "01 Dec 2026 22:00:00 GMT+3",
+      "time": "01 Dec 2026 18:50:00  GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
       "skills": [
         "telecom"
       ],
-      "url": "https://t.me/itsmdao",
-      "description": "12 баллов. Защита 01.12 (нед. 15). К декабрю сдача жёстче. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva №работы.",
+      "url": "https://t.me/ITSMDao/326",
+      "description": "12 баллов. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva 6",
       "type": ""
     },
     {
       "name": "Сети: ЛР 7",
-      "time": "15 Dec 2026 22:00:00 GMT+3",
+      "time": "15 Dec 2026 18:50:00  GMT+3",
       "place": "ауд. 2334, Кронверкский пр., 49 лит.А (вт 18:50–20:20 и 20:30–22:00)",
       "teacher": "Самигуллин Р.Ф.",
       "skills": [
         "telecom"
       ],
-      "url": "https://t.me/itsmdao",
-      "description": "12 баллов. Защита на последней паре 15.12 (нед. 17). Для отлично все 7 защит и ≥80 баллов. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva №работы.",
+      "url": "https://t.me/ITSMDao/326",
+      "description": "12 баллов. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva 7",
       "type": ""
     },
     {
