@@ -1,17 +1,5 @@
 {"deadlines": [
     {
-      "name": "Web: ЛР 2 — Каскадные таблицы стилей и адаптивная вёрстка",
-      "time": "30 Sep 2026 15:30:00 GMT+3",
-      "place": "ауд. 2414, Кронверкский пр., 49 (ср 15:30–17:00)",
-      "teacher": "Папикян С.С.",
-      "skills": [
-        "frontend"
-      ],
-      "url": "https://github.com/is-web-y28/frontend-labs",
-      "description": "12 баллов. CSS и адаптив. Материалы на GitHub is-web-y28. Штраф за просрочку 25%.",
-      "type": ""
-    },
-    {
       "name": "Web: ЛР 3 — Пользовательское интерактивное взаимодействие",
       "time": "14 Oct 2026 15:30:00 GMT+3",
       "place": "ауд. 2414, Кронверкский пр., 49 (ср 15:30–17:00)",
@@ -69,32 +57,6 @@
       ],
       "url": "https://github.com/is-web-y28/frontend-labs",
       "description": "14 баллов. Финальный этап проекта, тему согласовать заранее. Штраф за просрочку 25%. Всего за курс 80 баллов.",
-      "type": ""
-    },
-    {
-      "name": "UML: ЛР 2 — Тема и требования",
-      "time": "29 Sep 2026 18:50:00 GMT+3",
-      "place": "ауд. 2335, Кронверкский пр., 49 (вт 18:50–20:20 и 20:30–22:00)",
-      "teacher": "Кравченко Д.А.",
-      "skills": [
-        "uml"
-      ],
-      "url": "https://uml.itmo.is/labs/lab-2/",
-      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
-      "description": "8 баллов. Тема: Система управления рабочими сменами сотрудников розничных магазинов. Граница, стейкхолдеры, ≥5 ФТ, ≥2 НФТ, ≥2 ограничения, таблица цель—возможность—требование.",
-      "type": ""
-    },
-    {
-      "name": "UML: ЛР 3 — Диаграммы использования",
-      "time": "13 Oct 2026 18:50:00 GMT+3",
-      "place": "ауд. 2335, Кронверкский пр., 49 (вт 18:50–20:20 и 20:30–22:00)",
-      "teacher": "Кравченко Д.А.",
-      "skills": [
-        "uml"
-      ],
-      "url": "https://uml.itmo.is/labs/lab-3/",
-      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLScmjlppgXCL-VBh9Iwtp5TI25HybkVjLETpE7ND_NLcmFkNgg/viewform",
-      "description": "7 баллов. Общая + детализированная use case и краткая спецификация. С ЛР 3 всё в одном проекте VP. Выдача 29.09.",
       "type": ""
     },
     {
@@ -209,8 +171,21 @@
       "description": "12 баллов. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva 7",
       "type": ""
     },
+        {
+      "name": "DWH: ЛР 1-2",
+      "time": "20 Oct 2026 9:50:00 GMT+3",
+      "place": "ауд. 2430, Кронверкский пр., 49 лит.А (вт 09:50–11:20)",
+      "teacher": "Повышев В.В.",
+      "skills": [
+        "dwh",
+        "databases"
+      ],
+      "url": "https://disk.yandex.ru/i/0Yci3_UaEr7kCQ",
+      "description": "База данных и хранилище по Кимбаллу. Витрина и ETL из двух филиалов, идемпотентность, журнал запусков",
+      "type": ""
+    },
     {
-      "name": "DWH: ЛР 1-4.",
+      "name": "DWH: ЛР 3-4",
       "time": "10 Nov 2026 11:20:00 GMT+3",
       "place": "ауд. 2430, Кронверкский пр., 49 лит.А (вт 09:50–11:20)",
       "teacher": "Повышев В.В.",
@@ -218,8 +193,8 @@
         "dwh",
         "databases"
       ],
-      "url": "https://docs.yandex.ru/docs/view?url=ya-disk%3A%2F%2F%2Fdisk%2FЗагрузки%2FМетодические_указания_Хранилища_данных_2026.pdf&name=Методические_указания_Хранилища_данных_2026.pdf&uid=575912466",
-      "description": "25 баллов, обязательная. 12 неделя, 10.11. Incremental/CDC из двух филиалов, идемпотентность, журнал запусков",
+      "url": "https://disk.yandex.ru/i/0Yci3_UaEr7kCQ",
+      "description": "25 баллов, обязательная. Incremental/CDC из двух филиалов, идемпотентность, журнал запусков",
       "type": ""
     },
     {
@@ -231,8 +206,8 @@
         "dwh",
         "databases"
       ],
-      "url": "https://docs.yandex.ru/docs/view?url=ya-disk%3A%2F%2F%2Fdisk%2FЗагрузки%2FМетодические_указания_Хранилища_данных_2026.pdf&name=Методические_указания_Хранилища_данных_2026.pdf&uid=575912466",
-      "description": "5 баллов. 14 неделя, 24.11. Пересчёт витрины за период без удвоения агрегатов (DELETE+INSERT или MERGE).",
+      "url": "https://disk.yandex.ru/i/0Yci3_UaEr7kCQ",
+      "description": "5 баллов. Пересчёт витрины за период без удвоения агрегатов (DELETE+INSERT или MERGE).",
       "type": ""
     },
     {
@@ -244,44 +219,8 @@
         "dwh",
         "databases"
       ],
-      "url": "https://docs.yandex.ru/docs/view?url=ya-disk%3A%2F%2F%2Fdisk%2FЗагрузки%2FМетодические_указания_Хранилища_данных_2026.pdf&name=Методические_указания_Хранилища_данных_2026.pdf&uid=575912466",
-      "description": "20 баллов. 16 неделя, 08.12. Restore филиала из хранилища за интервал. Экзамен 20 баллов по расписанию; вместо экзамена — модуль миграции.",
-      "type": ""
-    },
-    {
-      "name": "ML: Коллоквиум unsupervised",
-      "time": "7 Oct 2026 11:30:00 GMT+3",
-      "place": "ауд. 2244, Кронверкский пр., 49 лит.А (ср 11:30–13:00)",
-      "teacher": "Захаров К.С.",
-      "skills": [
-        "ml"
-      ],
-      "url": "https://docs.google.com/document/d/1JrqIGzvHxasU1ShijO7I8j49hmRbHt13347Zy5qnPfg/edit",
-      "description": "10 баллов",
-      "type": ""
-    },
-    {
-      "name": "ML: ЛР supervised",
-      "time": "7 Oct 2026 11:30:00 GMT+3",
-      "place": "GitHub Classroom; на практике 2244 могут спросить код",
-      "teacher": "Захаров К.С.",
-      "skills": [
-        "ml"
-      ],
-      "url": "https://docs.google.com/document/d/1sUOnOO_r_LmC6Epub78oS0PJHX_Kz3nqg9s_8msvjWE/edit",
-      "description": "10 баллов, обязательная. PR в Classroom, замечания ревью обязательны.",
-      "type": ""
-    },
-    {
-      "name": "ML: ЛР unsupervised",
-      "time": "7 Oct 2026 11:30:00 GMT+3",
-      "place": "GitHub Classroom",
-      "teacher": "Захаров К.С.",
-      "skills": [
-        "ml"
-      ],
-      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
-      "description": "По желанию, в БАРС не идёт. Кластеризация / PCA. Ориентир пара 07.10.",
+      "url": "https://disk.yandex.ru/i/0Yci3_UaEr7kCQ",
+      "description": "20 баллов. Restore филиала из хранилища за интервал. Экзамен 20 баллов по расписанию; вместо экзамена — модуль миграции.",
       "type": ""
     },
     {
@@ -378,18 +317,6 @@
       ],
       "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "10 баллов.",
-      "type": ""
-    },
-    {
-      "name": "ML: ЛР audio",
-      "time": "02 Dec 2026 11:30:00 GMT+3",
-      "place": "GitHub Classroom",
-      "teacher": "Захаров К.С.",
-      "skills": [
-        "ml"
-      ],
-      "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
-      "description": "По желанию, в БАРС не идёт. Звук / речь. Ориентир 02.12.",
       "type": ""
     },
     {

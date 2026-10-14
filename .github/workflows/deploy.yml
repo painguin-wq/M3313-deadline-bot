@@ -1,63 +1,11 @@
-name: Deploy to Server (Optional)
+name: Deployment Disabled
 
 on:
-  workflow_run:
-    workflows: ["Build and Push Docker Image"]
-    types:
-      - completed
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  disabled:
     runs-on: ubuntu-latest
-    if: |
-      github.event.workflow_run.conclusion == 'success' && 
-      (secrets.SSH_PRIVATE_KEY != '' && secrets.SERVER_IP != '')
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Write env from repository secrets
-        run: |
-          cat > .env << EOF
-          TOKEN=${{ secrets.TOKEN }}
-          MAIN_GROUP_ID=${{ secrets.MAIN_GROUP_ID }}
-          EDIT_MESSAGE_ID=${{ secrets.EDIT_MESSAGE_ID }}
-          ADD_CALENDAR_LINK=${{ secrets.ADD_CALENDAR_LINK }}
-          ADMIN_USER_IDS=${{ secrets.ADMIN_USER_IDS }}
-          EOF
-
-      - name: Setup SSH Key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p "${{ secrets.SSH_PORT || 22 }}" -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
-
-      - name: Deploy Docker Compose and .env
-        run: |
-          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT || 22 }}" \
-            compose.yml Dockerfile .dockerignore .env \
-            ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PROJECT_PATH }}/
-
-      - name: Deploy application files
-        run: |
-          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT || 22 }}" \
-            main.py DEADLINES.json \
-            ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PROJECT_PATH }}/
-
-      - name: Pull latest image and restart bot
-        run: |
-          ssh -p "${{ secrets.SSH_PORT || 22 }}" ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }} << 'ENDSSH'
-          cd ${{ secrets.PROJECT_PATH }}
-          docker pull ghcr.io/${{ github.repository_owner }}/deadline-bot:latest
-          docker compose up -d --pull always
-          docker compose logs --tail=20
-          ENDSSH
-
-      - name: Verify deployment
-        run: |
-          ssh -p "${{ secrets.SSH_PORT || 22 }}" ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }} \
-            "cd ${{ secrets.PROJECT_PATH }} && docker compose ps"
+      - name: No deployment configured
+        run: echo "Deployment is intentionally disabled."

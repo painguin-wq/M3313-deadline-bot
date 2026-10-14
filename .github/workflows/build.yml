@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Publish Docker Image
 
 on:
   push:
@@ -10,6 +10,7 @@ on:
       - 'main.py'
       - 'DEADLINES.json'
       - '.dockerignore'
+      - 'compose.yml'
       - '.github/workflows/build.yml'
 
 jobs:

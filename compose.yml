@@ -1,19 +1,23 @@
 services:
   deadline_bot:
-    image: deadline-bot:local
-    env_file: .env
+    platform: linux/amd64
+    image: ghcr.io/${DOCKERHUB_ORG:-painguin-wq}/deadline-bot:latest
+    pull_policy: always
+    env_file:
+      - .env
     environment:
       PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./DEADLINES.json:/app/DEADLINES.json
+      - ./board-data:/app/board-data
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    init: true
     cpus: "0.25"
     mem_limit: 192m
     mem_reservation: 128m
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ./DEADLINES.json:/app/DEADLINES.json
-      - ./board-data:/app/board-data
-    restart: unless-stopped
     logging:
-      driver: "json-file"
+      driver: json-file
       options:
-        max-size: "10m"
+        max-size: 10m
         max-file: "3"
