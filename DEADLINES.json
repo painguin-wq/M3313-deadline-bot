@@ -147,19 +147,6 @@
       "description": "12 баллов. Отчёт на edu-net@yandex.ru. Тема письма: 3313 Alina Kanaeva 7",
       "type": ""
     },
-        {
-      "name": "DWH: ЛР 3",
-      "time": "27 Oct 2026 8:10:00 GMT+3",
-      "place": "ауд. 2430, Кронверкский пр., 49 лит.А (вт 08:10–11:20)",
-      "teacher": "Повышев В.В.",
-      "skills": [
-        "dwh",
-        "databases"
-      ],
-      "url": "https://disk.yandex.ru/i/0Yci3_UaEr7kCQ",
-      "description": "Витрина данных",
-      "type": ""
-    },
     {
       "name": "DWH: ЛР 4",
       "time": "10 Nov 2026 11:20:00 GMT+3",
@@ -170,6 +157,7 @@
         "databases"
       ],
       "url": "https://disk.yandex.ru/i/0Yci3_UaEr7kCQ",
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLSd5X2QGcROMoWlveFR4mnJ35Hyr_quxlfnNJT7yDztV25gJng/viewform?usp=publish-editor",
       "description": "25 баллов, обязательная. Incremental/CDC из двух филиалов, идемпотентность, журнал запусков",
       "type": ""
     },
@@ -183,6 +171,7 @@
         "databases"
       ],
       "url": "https://disk.yandex.ru/i/0Yci3_UaEr7kCQ",
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLSd5X2QGcROMoWlveFR4mnJ35Hyr_quxlfnNJT7yDztV25gJng/viewform?usp=publish-editor",
       "description": "5 баллов. Пересчёт витрины за период без удвоения агрегатов (DELETE+INSERT или MERGE).",
       "type": ""
     },
@@ -195,6 +184,7 @@
         "dwh",
         "databases"
       ],
+      "submit_url": "https://docs.google.com/forms/d/e/1FAIpQLSd5X2QGcROMoWlveFR4mnJ35Hyr_quxlfnNJT7yDztV25gJng/viewform?usp=publish-editor",
       "url": "https://disk.yandex.ru/i/0Yci3_UaEr7kCQ",
       "description": "20 баллов. Restore филиала из хранилища за интервал. Экзамен 20 баллов по расписанию; вместо экзамена — модуль миграции.",
       "type": ""
@@ -329,6 +319,30 @@
       ],
       "url": "https://drive.google.com/drive/folders/1nQ81CwV_Iz-BsFfrACZRVsbVJVnOxRLA",
       "description": "По желанию, в БАРС не идёт. Рекомендации. Ориентир 16.12.",
+      "type": ""
+    },
+        {
+      "name": "C#: ЛР 1",
+      "time": "31 Oct 2026 13:30:00 GMT+3",
+      "place": "ауд. 2403, Кронверкский пр., 49 (сб 13:30–17:00)",
+      "teacher": "Макаревич Р.Д.",
+      "skills": [
+        "c#"
+      ],
+      "url": "https://github.com/is-oop-y29-hassle-free/.github/blob/main/profile/labs/lab-1.md",
+      "description": "Основные принципы ООП, SOLID, GRASP, инкапсуляция, сокрытие, композиция, полиморфизм",
+      "type": ""
+    },
+      {
+      "name": "C#: ЛР 2",
+      "time": "14 Nov 2026 13:30:00 GMT+3",
+      "place": "ауд. 2403, Кронверкский пр., 49 (сб 13:30–17:00)",
+      "teacher": "Макаревич Р.Д.",
+      "skills": [
+        "c#"
+      ],
+      "url": "https://github.com/is-oop-y29-hassle-free/.github/blob/main/profile/labs/lab-2.md",
+      "description": "Порождающие паттерны: фабрика (абстрактная фабрика), строитель, прототип.",
       "type": ""
     }
   ]
